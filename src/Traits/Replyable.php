@@ -363,19 +363,18 @@ trait Replyable
 	}
 
 	/**
-	 * Add a header to the email
+	 * Add a mailbox list header to the email
 	 *
 	 * @param string $header
-	 * @param string $value
+	 * @param string[] $value
 	 */
 	public function setMailboxHeader($header, $value)
 	{
 		$headers = $this->symfonyEmail->getHeaders();
 
-		$headers->addMailboxHeader($header, $value);
+		$headers->addMailboxListHeader($header, $value);
 
 	}
-
 	
 
 	private function setReplySubject()
